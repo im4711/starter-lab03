@@ -8,7 +8,20 @@ class First extends Application {
     function __construct() {
         parent::__construct();
     }
-
+    
+    public function _remap() {
+        switch($this->uri->segment(1)) {
+            case 'first':
+                $this->index();
+                break;
+            case 'sleep':
+                $this->zzz();
+                break;
+            default:
+                break;
+        }
+    }
+    
     function index() {
         $this->data['pagebody'] = 'justone';
         $source = $this->quotes->first();
@@ -17,6 +30,17 @@ class First extends Application {
         $this->data['mug'] = $source['mug'];
         $this->data['what'] = $source['what'];
 
+        $this->render();
+    }
+    
+    function zzz() {
+        $this->data['pagebody'] = 'justone';
+        $source = $this->quotes->get(1);
+        
+        $this->data['who'] = $source['who'];
+        $this->data['mug'] = $source['mug'];
+        $this->data['what'] = $source['what'];
+        
         $this->render();
     }
 
