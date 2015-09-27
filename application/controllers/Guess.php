@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Display justone.php and fill in who, mug, what for the first quote.
+ * Display justone.php and fill in who, mug, what for the guess quote.
  */
 class Guess extends Application {
 

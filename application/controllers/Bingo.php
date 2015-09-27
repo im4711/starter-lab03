@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Display justone.php and fill in who, mug, what for the first quote.
+ * Display justone.php and fill in who, mug, what for bingo and wisdom.
  */
 class Bingo extends Application {
 
@@ -20,6 +20,9 @@ class Bingo extends Application {
         $this->render();
     }
     
+    /**
+     * Function to display wisdom quote.
+     */
     function wisdom() {
         $this->data['pagebody'] = 'justone';
         $source = $this->quotes->get(6);

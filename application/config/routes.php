@@ -39,12 +39,20 @@
 */
 
 $route['default_controller'] = "welcome";
+// This route will go into the 'last' folder and look for 'last'
 $route['last'] = "last/last";
+// this route will go to the 'first' folder and look for 'zzz'
 $route['sleep'] = "first/zzz";
+// this route will see if an address matches 'lock' as the first word, and any
+// two words after
 $route['lock/:any/:any'] = 'welcome/shucks';
+// this route matches the word 'show' and any number after will be stored
+// in order to use it in the function 'gimme()'
 $route['show/(:num)'] = 'first/gimme/$1';
 $route['dunno'] = 'guess';
+// regex: any 4 letters/bingo are valid; go to bingo/index()
 $route['([a-zA-Z]{4})/bingo'] = 'bingo';
+// comp and any 4 numbers are valid/anything is valid; go to bingo/wisdom()
 $route['(comp[0-9]{4})/:any'] = 'bingo/wisdom';
 $route['404_override'] = '';
 

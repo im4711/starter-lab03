@@ -30,6 +30,9 @@ class Welcome extends Application {
         $this->render();
     }
     
+    /**
+     * Function to display shucks quote.
+     */
     function shucks() {
         $this->data['pagebody'] = 'justone';
         $source = $this->quotes->get(2);
