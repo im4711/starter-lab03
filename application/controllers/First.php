@@ -17,6 +17,8 @@ class First extends Application {
             case 'sleep':
                 $this->zzz();
                 break;
+            case 'show':
+                $this->gimme($this->uri->segment(2));
             default:
                 break;
         }
@@ -43,5 +45,15 @@ class First extends Application {
         
         $this->render();
     }
-
+    
+    function gimme($num) {
+        $this->data['pagebody'] = 'justone';
+        $source = $this->quotes->get($num);
+        
+        $this->data['who'] = $source['who'];
+        $this->data['mug'] = $source['mug'];
+        $this->data['what'] = $source['what'];
+        
+        $this->render();
+    }
 }
