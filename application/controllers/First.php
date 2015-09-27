@@ -9,21 +9,6 @@ class First extends Application {
         parent::__construct();
     }
     
-    public function _remap() {
-        switch($this->uri->segment(1)) {
-            case 'first':
-                $this->index();
-                break;
-            case 'sleep':
-                $this->zzz();
-                break;
-            case 'show':
-                $this->gimme($this->uri->segment(2));
-            default:
-                break;
-        }
-    }
-    
     function index() {
         $this->data['pagebody'] = 'justone';
         $source = $this->quotes->first();

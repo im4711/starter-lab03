@@ -13,19 +13,6 @@ class Welcome extends Application {
         parent::__construct();
     }
 
-    public function _remap() {
-        switch($this->uri->segment(1)) {
-            case '':
-                $this->index();
-                break;
-            case 'lock':
-                $this->shucks();
-                break;
-            default:
-                break;
-        }
-    }
-    
     //-------------------------------------------------------------
     //  The normal pages
     //-------------------------------------------------------------
