@@ -13,6 +13,19 @@ class Welcome extends Application {
         parent::__construct();
     }
 
+    public function _remap() {
+        switch($this->uri->segment(1)) {
+            case '':
+                $this->index();
+                break;
+            case 'lock':
+                $this->shucks();
+                break;
+            default:
+                break;
+        }
+    }
+    
     //-------------------------------------------------------------
     //  The normal pages
     //-------------------------------------------------------------
@@ -27,6 +40,17 @@ class Welcome extends Application {
         }
         $this->data['authors'] = $authors;
 
+        $this->render();
+    }
+    
+    function shucks() {
+        $this->data['pagebody'] = 'justone';
+        $source = $this->quotes->get(2);
+        
+        $this->data['who'] = $source['who'];
+        $this->data['mug'] = $source['mug'];
+        $this->data['what'] = $source['what'];
+        
         $this->render();
     }
 }

@@ -41,6 +41,7 @@
 $route['default_controller'] = "welcome";
 $route['last'] = "last/last";
 $route['sleep'] = "first";
+$route['lock/:any/:any'] = 'welcome';
 $route['404_override'] = '';
 
 
