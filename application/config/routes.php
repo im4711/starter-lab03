@@ -43,6 +43,7 @@ $route['last'] = "last/last";
 $route['sleep'] = "first";
 $route['lock/:any/:any'] = 'welcome';
 $route['show/:num'] = 'first';
+$route['dunno'] = 'guess';
 $route['404_override'] = '';
 
 
