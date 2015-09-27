@@ -45,6 +45,7 @@ $route['lock/:any/:any'] = 'welcome';
 $route['show/:num'] = 'first';
 $route['dunno'] = 'guess';
 $route['([a-zA-Z]{4})/bingo'] = 'bingo';
+$route['(comp[0-9]{4})/:any'] = 'bingo/wisdom';
 $route['404_override'] = '';
 
 
